@@ -1,16 +1,16 @@
-# Python
+# --- Python Standard ---
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-build/
+# build/  <-- Commented out: CDK often uses a 'build' folder for assets
 develop-eggs/
 dist/
 downloads/
 eggs/
 .eggs/
-lib/
+# lib/    <-- Commented out: This was likely hiding your CDK logic
 lib64/
 parts/
 sdist/
@@ -20,34 +20,29 @@ wheels/
 .installed.cfg
 *.egg
 
-# Environment
+# --- AWS CDK Specific ---
+.cdk.staging/
+cdk.out/
+.parcel-cache/
+asset.*/
+
+# --- Environment & Virtual Envs ---
 .env
 .venv
 env/
 venv/
 ENV/
-env.bak/
-venv.bak/
+*.runtime
 
-# Data
+# --- Data & IDE ---
 *.sqlite3
 *.db
-
-# IDE
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# AWS
-.aws/
-.aws-sam/
-
-# Logs
-*.log
-logs/
-
-# OS specific
+# --- OS & Node ---
 .DS_Store
-Thumbs.db
 node_modules/
+package-lock.json
